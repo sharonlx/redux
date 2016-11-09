@@ -1,4 +1,6 @@
-export default (state = 0, action) => {
+import otherInfo from './list.js';
+import { combineReducers } from 'redux';
+const inAndDeCrease = (state = 0, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return state + 1
@@ -8,3 +10,7 @@ export default (state = 0, action) => {
       return state
   }
 }
+export default combineReducers({
+  otherInfo: otherInfo,
+  counter: inAndDeCrease
+});
